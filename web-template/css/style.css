@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,500,600,700|Oxanium&display=swap");
+html {
+  font-family: "Fira Sans Condensed", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.sidebar {
+  position: fixed;
+  width: 240px;
+  height: 100vh;
+  background-color: #0092CE;
+  top: -100vh;
+  z-index: 2;
+  -webkit-transition: -webkit-transform 300ms ease-in;
+  transition: -webkit-transform 300ms ease-in;
+  transition: transform 300ms ease-in;
+  transition: transform 300ms ease-in, -webkit-transform 300ms ease-in;
+}
+
+.sidebar-toggle {
+  position: absolute;
+  width: 84px;
+  height: 30px;
+  left: 6px;
+  top: 100%;
+  background-color: #0092ce;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  outline: 0;
+  -webkit-box-shadow: inset 4px -14px 8px rgba(255, 255, 255, 0.2), inset -4px -6px 8px rgba(255, 255, 255, 0.2), 0px 0px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 4px -14px 8px rgba(255, 255, 255, 0.2), inset -4px -6px 8px rgba(255, 255, 255, 0.2), 0px 0px 6px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  -webkit-transition: margin 300ms linear;
+  transition: margin 300ms linear;
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
+}
+
+.sidebar-toggle:hover, .sidebar-toggle:focus {
+  background-color: #0084b8;
+}
+
+.sidebar-toggle:active {
+  background-color: #0076a5;
+}
+
+.sidebar-toggle::after,
+.sidebar-toggle::before {
+  content: '';
+  position: absolute;
+  width: 36px;
+  height: 6px;
+  background-color: #e6e6e6;
+  top: 12px;
+  -webkit-transition: all 600ms ease-in;
+  transition: all 600ms ease-in;
+}
+
+.sidebar-toggle::after {
+  left: 8px;
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+  border-radius: 4px 0 0 4px;
+}
+
+.sidebar-toggle::before {
+  right: 8px;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  border-radius: 0 4px 4px 0;
+}
+
+.brand {
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #E44097;
+  position: absolute;
+  top: 40px;
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 300ms linear;
+  transition: all 300ms linear;
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
+}
+
+.brand-logo {
+  width: 25%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 300ms linear;
+  transition: all 300ms linear;
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
+}
+
+.brand-title,
+.brand-subtitle {
+  color: #FFC20F;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 300ms linear;
+  transition: all 300ms linear;
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
+}
+
+.brand-title {
+  font-family: "Oxanium", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.brand-subtitle {
+  font-size: smaller;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.sidebar.open {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.open .sidebar-toggle {
+  top: 0;
+  margin-left: 72px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar.open .sidebar-toggle:hover, .sidebar.open .sidebar-toggle:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar.open .sidebar-toggle:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar.open .sidebar-toggle::after,
+.sidebar.open .sidebar-toggle::before {
+  top: 10px;
+  background-color: #787878;
+}
+
+.sidebar.open .sidebar-toggle::after {
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+}
+
+.sidebar.open .sidebar-toggle::before {
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+}
+
+.sidebar.open .brand {
+  -webkit-transform: translate(10%, 10%);
+          transform: translate(10%, 10%);
+  -webkit-box-shadow: -4px 6px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: -4px 6px 6px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.open > .brand > .brand-logo {
+  -webkit-box-shadow: -4px 6px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: -4px 6px 6px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.open > .brand .brand-title,
+.sidebar.open > .brand .brand-subtitle {
+  text-shadow: -4px 6px 6px rgba(0, 0, 0, 0.8);
+}
+
+.navbar-nav {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 6vh;
+  min-height: 36px;
+  max-height: 40px;
+  background-color: #0092CE;
+  -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.7);
+          box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.navbar-nav .nav-items {
+  height: 100%;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-nav .nav-item {
+  list-style: none;
+  margin-right: 2em;
+}
+
+.navbar-nav .nav-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #E8E8E8;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+  -webkit-transition: color 100ms ease;
+  transition: color 100ms ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #c8c8c8;
+}
+
+main {
+  height: 200vh;
+}
+
+@-webkit-keyframes toggleSlideRight {
+  0% {
+    left: 10px;
+  }
+  100% {
+    left: 78px;
+  }
+}
+
+@keyframes toggleSlideRight {
+  0% {
+    left: 10px;
+  }
+  100% {
+    left: 78px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

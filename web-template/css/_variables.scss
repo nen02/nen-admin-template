@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,500,600,700|Oxanium&display=swap');
+
+$firaSansCondensed: 'Fira Sans Condensed', sans-serif;
+$oxanium: 'Oxanium', sans-serif;
+
+// bs colors
+// $primary: #0275D8;
+// $success: #5CB85C;
+// $info: #5BC0DE;
+// $warning: #F0AD4E;
+// $danger: #D9534F;
+// $dark: #292B2C;
+// $default: #F8F8F8;
+
+// own colors
+$primary: #3276B5;
+$success: #33B8A5;
+$info: #33A7D8;
+$warning: #FECE3E;
+$danger: #F04950;
+$dark: #292B2C;
+$default: #ECECEC;
+$light: #E8E8E8;
+
+// triadic colors
+$c1: #0092CE;
+$c2: #E44097;
+$c3: #FFC20F;
+
+// shadows
+$lightShadow: -4px 6px 6px rgba(0, 0, 0, .3);
+$shadow: -4px 6px 6px rgba(0, 0, 0, .5);
+$darkShadow: -4px 6px 6px rgba(0, 0, 0, .8);
+$tinShadow: 0px 0px 6px rgba(0, 0, 0, .5);

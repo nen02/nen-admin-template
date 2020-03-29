@@ -1,0 +1,220 @@
+body {
+    overflow: hidden;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.sidebar {
+    position: fixed;
+    width: 240px;
+    height: 100vh;
+    background-color: $c1;
+    top: -100vh;
+    z-index: 2;
+    transition: transform 300ms ease-in;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    width: 84px;
+    height: 30px;
+    left: 6px;
+    top: 100%;
+    background-color: rgba(0, 146, 206, 1);
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    outline: 0;
+    box-shadow: 
+        inset 4px -14px 8px rgba(255, 255, 255, .2),
+        inset -4px -6px 8px rgba(255, 255, 255, .2),
+        $tinShadow;
+    cursor: pointer;
+    transition: margin 300ms linear;
+    transition-delay: 400ms;
+
+    &:hover,
+    &:focus {
+        background-color: rgb(0, 132, 184);
+    }
+
+    &:active {
+        background-color: rgb(0, 118, 165);
+    }
+}
+
+.sidebar-toggle::after,
+.sidebar-toggle::before {
+    content: '';
+    position: absolute;
+    width: 36px;
+    height: 6px;
+    background-color: rgba(230, 230, 230, 1);
+    top: 12px;
+    transition: all 600ms ease-in;
+}
+
+.sidebar-toggle::after {
+    left: 8px;
+    transform: rotate(20deg);
+    border-radius: 4px 0 0 4px;
+}
+
+.sidebar-toggle::before {
+    right: 8px;
+    transform: rotate(-20deg);
+    border-radius: 0 4px 4px 0;
+}
+
+.brand {
+    padding: 1em;
+    @include displayFlex(space-around, center);
+    background-color: $c2;
+    position: absolute;
+    top: 40px;
+    box-shadow: $tinShadow;
+    transition: all 300ms linear;
+    transition-delay: 400ms;
+}
+
+.brand-logo {
+    width: 25%;
+    border-radius: 50%;
+    box-shadow: $tinShadow;
+    transition: all 300ms linear;
+    transition-delay: 400ms;
+}
+
+.brand-title,
+.brand-subtitle {
+    color: $c3;
+    margin: 0;
+    text-align: center;
+    text-shadow: $tinShadow;
+    transition: all 300ms linear;
+    transition-delay: 400ms;
+}
+
+.brand-title {
+    font-family: $oxanium;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.brand-subtitle {
+    font-size: smaller;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.sidebar.open {
+    transform: translateY(100%);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, .5);
+}
+
+.sidebar.open .sidebar-toggle {
+    top: 0;
+    margin-left: 72px;
+    // transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, .3);
+
+    &:hover,
+    &:focus {
+        background-color: rgba(255, 255, 255, .2);
+    }
+
+    &:active {
+        background-color: rgba(255, 255, 255, .1);
+    }
+}
+
+.sidebar.open .sidebar-toggle::after,
+.sidebar.open .sidebar-toggle::before {
+    top: 10px;
+    background-color: rgba(120, 120, 120, 1);
+}
+
+.sidebar.open .sidebar-toggle::after {
+    transform: rotate(-20deg);
+}
+
+.sidebar.open .sidebar-toggle::before {
+    transform: rotate(20deg);
+}
+
+.sidebar.open .brand {
+    transform: translate(10%, 10%);
+    box-shadow: $shadow;
+}
+
+.sidebar.open > .brand > .brand-logo {
+    box-shadow: $shadow;
+}
+
+.sidebar.open > .brand .brand-title,
+.sidebar.open > .brand .brand-subtitle {
+    text-shadow: $darkShadow;
+}
+
+.navbar-nav {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 6vh;
+    min-height: 36px;
+    max-height: 40px;
+    background-color: $c1;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, .7);
+}
+
+.navbar-nav .nav-items {
+    // border: 1px solid yellow;
+    height: 100%;
+    margin: 0;
+    @include displayFlex(flex-end, center);
+}
+
+.navbar-nav .nav-item {
+    list-style: none;
+    margin-right: 2em;
+
+    // border: 1px solid yellow;
+}
+
+.navbar-nav .nav-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: $light;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+    transition: color 100ms ease;
+
+    &:hover {
+        color: #c8c8c8;
+    }
+}
+
+// @media screen and (min-width: 768px) {
+//     .sidebar {
+//         left: 0;
+//         top: 0;
+//         box-shadow: 0px 0px 6px rgba(0, 0, 0, .5);
+//     }
+    
+//     .sidebar-toggle {
+//         transform: rotate(-90deg);
+//         // position: absolute;
+//         top: 0;
+//         left: 255px;
+//     }
+
+//     .navbar {
+//         width: 6vh;
+//         height: 100vh;
+//     }
+// }

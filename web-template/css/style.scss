@@ -1,0 +1,18 @@
+@import './variables';
+@import './mixin';
+
+html {
+    font-family: $firaSansCondensed;
+}
+
+body {
+    margin: 0;
+}
+
+@import './sidebar';
+
+main {
+    height: 200vh;
+}
+
+@import './keyframes';
