@@ -8,7 +8,7 @@ body {
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 header {
@@ -33,7 +33,7 @@ header {
 
 .sidebar-toggle {
   position: absolute;
-  width: 84px;
+  width: 80px;
   height: 30px;
   left: 6px;
   top: 100%;
@@ -44,8 +44,8 @@ header {
   -webkit-box-shadow: inset 4px -14px 8px rgba(255, 255, 255, 0.2), inset -4px -6px 8px rgba(255, 255, 255, 0.2), 0px 0px 6px rgba(0, 0, 0, 0.5);
           box-shadow: inset 4px -14px 8px rgba(255, 255, 255, 0.2), inset -4px -6px 8px rgba(255, 255, 255, 0.2), 0px 0px 6px rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  -webkit-transition: margin 300ms linear;
-  transition: margin 300ms linear;
+  -webkit-transition: margin-left 300ms linear;
+  transition: margin-left 300ms linear;
   -webkit-transition-delay: 400ms;
           transition-delay: 400ms;
 }
@@ -62,7 +62,7 @@ header {
 .sidebar-toggle::before {
   content: '';
   position: absolute;
-  width: 36px;
+  width: 34px;
   height: 6px;
   background-color: #e6e6e6;
   top: 12px;
@@ -142,6 +142,45 @@ header {
   letter-spacing: 4px;
 }
 
+.sidebar-nav {
+  position: absolute;
+  top: 144px;
+  width: 100%;
+}
+
+.sidebar-nav .nav-items {
+  margin: 0;
+  padding: 0 4px;
+}
+
+.sidebar-nav .nav-items .nav-item {
+  list-style: none;
+  margin: 4px;
+}
+
+.sidebar-nav .nav-items .nav-item .nav-link {
+  color: #E8E8E8;
+  line-height: 2.2rem;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.sidebar-nav .nav-items .nav-item .nav-link:hover, .sidebar-nav .nav-items .nav-item .nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav .nav-items .nav-item .nav-link:active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.sidebar-nav .nav-items .nav-item .nav-link .link-icon {
+  margin: 0 4px 0 12px;
+}
+
 .sidebar.open {
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
@@ -151,7 +190,7 @@ header {
 
 .sidebar.open .sidebar-toggle {
   top: 0;
-  margin-left: 72px;
+  margin-left: 76px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -166,7 +205,6 @@ header {
 .sidebar.open .sidebar-toggle::after,
 .sidebar.open .sidebar-toggle::before {
   top: 10px;
-  background-color: #787878;
 }
 
 .sidebar.open .sidebar-toggle::after {
@@ -238,6 +276,82 @@ header {
 
 .navbar-nav .nav-link:hover {
   color: #c8c8c8;
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar {
+    left: -240px;
+    top: 0;
+  }
+  .sidebar-toggle {
+    top: 0;
+    left: 260px;
+    -webkit-transition: left 400ms;
+    transition: left 400ms;
+    -webkit-transition-delay: 400ms;
+            transition-delay: 400ms;
+  }
+  .sidebar-toggle::after,
+  .sidebar-toggle::before {
+    -webkit-transition: all 300ms linear;
+    transition: all 300ms linear;
+  }
+  .sidebar-toggle::before {
+    top: 4px;
+    right: 24px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    border-radius: 0;
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    border-top: 6px solid #e6e6e6;
+    border-right: 6px solid #e6e6e6;
+    border-radius: 4px;
+  }
+  .sidebar-toggle::after {
+    top: 11px;
+    height: 6px;
+    width: 28px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    left: 24px;
+    border-radius: 4px;
+  }
+  .sidebar.open {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+  }
+  .sidebar.open .sidebar-toggle {
+    top: 0;
+    left: 15px;
+    margin-left: 65px;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  .sidebar.open .sidebar-toggle:hover, .sidebar.open .sidebar-toggle:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .sidebar.open .sidebar-toggle:active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .sidebar.open .sidebar-toggle::after {
+    top: 11px;
+    left: 28px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  .sidebar.open .sidebar-toggle::before {
+    -webkit-transform: scaleX(-1) rotate(45deg);
+            transform: scaleX(-1) rotate(45deg);
+    right: 35px;
+    top: 4px;
+    background-color: transparent;
+    border-top: 6px solid;
+    border-right: 6px solid;
+    border-color: #e6e6e6;
+  }
 }
 
 main {
