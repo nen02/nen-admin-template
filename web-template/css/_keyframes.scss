@@ -7,3 +7,21 @@
         left: 78px;
     }
 }
+
+@keyframes nav-link-fade {
+	0% {
+		opacity: 0;
+		transform: translateX(-10em);
+	}
+    
+    50% {
+        opacity: 0.5;
+        transform: translateX(5em);
+    }
+    
+
+	100% {
+		opacity: 1;
+		transform: translateX(0em);
+	}
+}
