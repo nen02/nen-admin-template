@@ -25,3 +25,15 @@
 		transform: translateX(0em);
 	}
 }
+
+@keyframes slide-down-fade {
+    from {
+        margin-top: 0;
+        opacity: 0;
+    }
+
+    to {
+        margin-top: .4em;
+        opacity: 1;
+    }
+}
