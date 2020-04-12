@@ -19,9 +19,9 @@
   "homepage": "https://github.com/nen02/nen-admin-template#readme",
   "devDependencies": {
     "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "babel-loader": "^8.1.0",
-    "core-js": "^3.6.4",
+    "core-js": "^3.6.5",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   }
